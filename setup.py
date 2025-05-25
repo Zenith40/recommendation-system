@@ -31,7 +31,7 @@ def get_requirements(file_path:str) -> List[str]:
 
 # Package Information
 setup(
-    name = src_name,
+    name = src_repo,
     version = __version__,
     author = author_name,
     author_email = 'zenith04u@gmail.com',
