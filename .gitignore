@@ -177,3 +177,4 @@ cython_debug/
 template.py
 rsys/
 logs/
+artifact/

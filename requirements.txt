@@ -4,6 +4,7 @@ matplotlib
 seaborn
 scikit-learn
 nltk
-pickle
 streamlit
--e.
+ipykernel
+openpyxl
+#-e.
