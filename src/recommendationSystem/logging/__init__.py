@@ -28,4 +28,3 @@ logging.basicConfig(
     logging.info("Logger has started")'''
 
 logger = logging.getLogger('recommendation-system-logger')
-logger.info("---------------x DIRECTORY CHANGE x------------------")

@@ -78,3 +78,40 @@ def save_object(file_path,obj):
 
     except Exception as e:
         raise CustomException(e,sys)
+    
+
+# --------------------------------- Prediction File --------------------------------------------
+
+import numpy as np
+
+def recommend(data,matrix,anime):
+    anime_index = data[data.title == anime].index[0]
+    distances = np.around(matrix[anime_index],2)
+    anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[0:10]
+
+    recommended_anime = []
+    recommended_anime_poster = []
+    recommended_anime_link = []
+    recommended_similarity_score = []
+
+    for i in anime_list:
+        # anime
+        recommended_anime.append(data.iloc[i[0]].title)
+        # posters
+        recommended_anime_poster.append(data.iloc[i[0]].image)
+        # links
+        recommended_anime_link.append(data.iloc[i[0]].links)
+        # score
+        recommended_similarity_score.append(f'{np.around(i[1]*100,2)} %')
+    return recommended_anime, recommended_anime_poster, recommended_anime_link, recommended_similarity_score
+
+# --------------------------------- Find Story of the anime --------------------------------------------
+
+import pandas as pd
+
+def find_anime(label):
+    dataframe_path = 'artifact\\data.csv'
+    df = pd.read_csv(dataframe_path)
+    story = '\n'.join(df[df.name == label].sypnopsis.to_list())
+    return story
+        
