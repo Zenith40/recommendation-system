@@ -1,5 +1,8 @@
+# --------------------------------- CUSTOM EXCEPTION CLASS --------------------------------------------
+
 # Importing Libraries
-import sys
+import sys  
+
 
 # Defining structure of exception message
 def error_message_detail(error:Exception,error_detail:sys):
@@ -27,3 +30,51 @@ class CustomException(Exception):
     except Exception as e:
         logging.info("Divide by Zero Error")
         raise CustomException(e,sys)''' 
+
+
+# --------------------------------- PREPROCESSING THE TEXT IN THE DATAFRAME --------------------------------------------
+
+# Importing Libraries
+from nltk.stem.porter import PorterStemmer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+
+
+def removing_blank_lines(text):
+    return text.replace('\n'," ")
+
+def removing_pre_suff_ix(text):
+    y = []
+    
+    for i in text.split():
+        y.append(PorterStemmer().stem(i))
+    
+    return " ".join(y)
+
+def converting_into_vectors(text):
+    vec = CountVectorizer(max_features=5000,stop_words='english').fit_transform(text).toarray()
+    return vec
+
+def finding_similarity(vec):
+    similarity = cosine_similarity(vec)
+    return similarity
+
+# --------------------------------- SAVING FILES --------------------------------------------
+
+import os
+import dill
+
+from recommendationSystem.logging import logger
+
+
+def save_object(file_path,obj):
+    try:
+        dir_path = os.path.dirname(file_path)
+        os.makedirs(dir_path,exist_ok=True)
+
+        with open(file_path,'wb') as file_obj:
+            dill.dump(obj,file_obj)
+
+    except Exception as e:
+        raise CustomException(e,sys)

@@ -7,4 +7,5 @@ nltk
 streamlit
 ipykernel
 openpyxl
+dill
 #-e.
