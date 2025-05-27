@@ -114,4 +114,4 @@ def find_anime(label):
     df = pd.read_csv(dataframe_path)
     story = '\n'.join(df[df.name == label].sypnopsis.to_list())
     return story
-        
+
