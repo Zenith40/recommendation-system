@@ -2,20 +2,22 @@ import streamlit as st
 #import pandas as pd
 #import numpy as np
 import os
+import time
 
 from recommendationSystem.pipeline.predict import return_data
 from recommendationSystem.utils.common import recommend,find_anime
 
 @st.cache_resource
 def Recommendation_System():
-    with st.spinner("Started training the model..."):
-        os.system("python main.py")
+    with st.spinner("Started training the model...",show_time=True):
+        time.sleep(5)
+        #os.system("python main.py")             #remove the comment if docker file is not used
     st.success("Deployment complete, Successfully created the system!")
 
 
 st.title("Anime Recommender System")
 
-Recommendation_System()
+#Recommendation_System()
 
 anime_data, similarity_matrix = return_data().predict()
 

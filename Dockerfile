@@ -1,5 +1,5 @@
 # Use official Python image
-FROM python:3.10-slim
+FROM python:3.13-slim
 
 # Set working directory
 WORKDIR /app
@@ -9,6 +9,9 @@ COPY . .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Building Local Package
+RUN python main.py
 
 # Optional: install as a local package (important!)
 #RUN pip install -e .
