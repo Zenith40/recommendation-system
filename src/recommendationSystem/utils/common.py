@@ -110,8 +110,23 @@ def recommend(data,matrix,anime):
 import pandas as pd
 
 def find_anime(label):
-    dataframe_path = 'artifact\\data.csv'
+    dataframe_path = os.path.join("artifact","data.csv")
     df = pd.read_csv(dataframe_path)
     story = '\n'.join(df[df.name == label].sypnopsis.to_list())
     return story
 
+# --------------------------------- Running main.py file --------------------------------------------
+
+'''from recommendationSystem.logging import logger
+from recommendationSystem.components.data_ingestion import DataIngestion
+from recommendationSystem.components.data_transformation import DataTransformation
+
+def run_main():
+    logger.info("Starting the Custom logger")
+    logger.info("---------------x DIRECTORY CHANGE x------------------")
+
+    obj = DataIngestion()
+    data  = obj.initiate_data_ingestion()
+    DataTransformation().initiate_data_transformation_obj(data)
+
+    logger.info('------------------ | Execution Completed |---------------------')'''

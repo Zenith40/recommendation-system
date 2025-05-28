@@ -3,9 +3,6 @@ import sys
 
 import numpy as np
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-from nltk.stem.porter import PorterStemmer
-from sklearn.metrics.pairwise import cosine_similarity
 
 from recommendationSystem.logging import logger
 from recommendationSystem.config.configuration import DataTransformationConfig

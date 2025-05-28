@@ -1,23 +1,23 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
+#import pandas as pd
+#import numpy as np
+import os
 
-from recommendationSystem.components.predict import return_data
+from recommendationSystem.pipeline.predict import return_data
 from recommendationSystem.utils.common import recommend,find_anime
-from main import run_main
 
 @st.cache_resource
 def Recommendation_System():
-    with st.spinner("Started training the model...",show_time=True):
-        run_main()
-        st.success("Deployment complete, Successfully created the system!")
+    with st.spinner("Started training the model..."):
+        os.system("python main.py")
+    st.success("Deployment complete, Successfully created the system!")
 
-
-anime_data, similarity_matrix = return_data().predict()
 
 st.title("Anime Recommender System")
 
 Recommendation_System()
+
+anime_data, similarity_matrix = return_data().predict()
 
 select_anime_name = st.selectbox(
     "Choose Anime Name : ",
