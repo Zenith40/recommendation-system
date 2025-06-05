@@ -52,16 +52,18 @@ The application is containerized using **Docker** for consistent deployment acro
 
 ## 📦 Docker Deployment
 
-To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
+* To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
 
-# Pull the Image
-docker pull zenith40/recommendation-system:Ver-0.0.1
+### Pull the Image
+* docker pull zenith40/recommendation-system:Ver-0.0.1
 
-# Run the container
-docker run -p 8501:8501 zenith40/recommendation-system:Ver-0.0.1
-Then, open your browser and navigate to http://localhost:8501
+### Run the container
+* docker run -p 8501:8501 zenith40/recommendation-system:Ver-0.0.1
+* Then, open your browser and navigate to http://localhost:8501
 
-🌱 Future Improvements
+---
+
+## 🌱 Future Improvements
 🔍 Integrate TF-IDF or Word2Vec/Doc2Vec for deeper context awareness
 
 🧠 Experiment with transformer-based models (e.g., BERT embeddings)
