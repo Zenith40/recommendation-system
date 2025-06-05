@@ -6,6 +6,13 @@ The application is containerized using **Docker** for consistent deployment acro
 
 ---
 
+## 🚀 Live Demo
+
+🎯 Try the Anime Recommendation System on Streamlit:  
+👉 [Live App on Streamlit](https://zenith40-recommendation-system.streamlit.app/)
+
+---
+
 ## 🚀 Features
 
 - Recommends animes based on **storyline similarity**
@@ -19,11 +26,13 @@ The application is containerized using **Docker** for consistent deployment acro
 ## 🛠 Tech Stack
 
 - **Python 3.9+**
+- **Streamlit** for web interface
 - **scikit-learn** for CountVectorizer & Cosine Similarity
 - **NLTK** for text preprocessing (PorterStemmer)
-- **Flask/FastAPI** (in `app.py`)
-- **Docker** for containerization
+- **Pandas**, **NumPy** for data handling
 - **BeautifulSoup / Scrapy** (for scraping, if applicable)
+- **Docker** (for local deployment)
+- **GitHub Actions** (CI/CD optional)
 
 ---
 
@@ -50,14 +59,21 @@ The application is containerized using **Docker** for consistent deployment acro
 
 ---
 
-## 📦 Docker Deployment
+## 📦 Deployment Options
+
+### ▶️ Streamlit (Cloud)
+
+* To run the app on streamlit cloud : https://zenith40-recommendation-system.streamlit.app/
+
+
+### ▶️ Docker (Local)
 
 * To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
 
-### Pull the Image
+**Pull the Image**
 * docker pull zenith40/recommendation-system:Ver-0.0.1
 
-### Run the container
+**Run the container**
 * docker run -p 8501:8501 zenith40/recommendation-system:Ver-0.0.1
 * Then, open your browser and navigate to http://localhost:8501
 
