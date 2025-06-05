@@ -1,25 +1,32 @@
 import streamlit as st
-#import pandas as pd
+import pandas as pd
+import pickle
 #import numpy as np
 import os
 import time
 
-from recommendationSystem.pipeline.predict import return_data
+#from recommendationSystem.pipeline.predict import return_data
 from recommendationSystem.utils.common import recommend,find_anime
-
+from predict_trial import return_data
+ 
 @st.cache_resource
 def Recommendation_System():
     with st.spinner("Started training the model...",show_time=True):
         time.sleep(5)
+        data_path, matrix_path = return_data().predict()
         #os.system("python main.py")             #remove the comment if docker file is not used
+        return data_path,matrix_path
     st.success("Deployment complete, Successfully created the system!")
 
 
 st.title("Anime Recommender System")
 
-#Recommendation_System()
 
-anime_data, similarity_matrix = return_data().predict()
+
+data_path, matrix_path = Recommendation_System()
+
+anime_data = pd.read_csv(data_path)
+similarity_matrix = pickle.load(open(file=matrix_path,mode='rb'))
 
 select_anime_name = st.selectbox(
     "Choose Anime Name : ",
