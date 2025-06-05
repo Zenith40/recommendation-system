@@ -52,7 +52,7 @@ The application is containerized using **Docker** for consistent deployment acro
 
 ## 📦 Docker Deployment
 
-To run the app using Docker:
+To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
 
 # Build the Docker image
 docker build -t anime-recommender .
