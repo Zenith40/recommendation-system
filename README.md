@@ -86,4 +86,8 @@ This project is licensed under the MIT License
 
 * scikit-learn
 
+<<<<<<< HEAD
 * AnimePlanet / MyAnimeList (for reference data structure)
+=======
+* AnimePlanet / MyAnimeList (for reference data structure)
+>>>>>>> 716c18ea696631c4fd9bba901dee8cf905133153
