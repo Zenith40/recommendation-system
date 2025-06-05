@@ -80,8 +80,8 @@ Then, open your browser and navigate to http://localhost:8501
 This project is licensed under the MIT License
 
 🙌 Acknowledgements
-NLTK
+* NLTK
 
-scikit-learn
+* scikit-learn
 
-AnimePlanet / MyAnimeList (for reference data structure)
+* AnimePlanet / MyAnimeList (for reference data structure)
