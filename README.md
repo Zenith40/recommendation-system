@@ -54,11 +54,11 @@ The application is containerized using **Docker** for consistent deployment acro
 
 To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
 
-# Build the Docker image
-docker build -t anime-recommender .
+# Pull the Image
+docker pull zenith40/recommendation-system:Ver-0.0.1
 
 # Run the container
-docker run -p 8501:8501 anime-recommender
+docker run -p 8501:8501 zenith40/recommendation-system:Ver-0.0.1
 Then, open your browser and navigate to http://localhost:8501
 
 🌱 Future Improvements
